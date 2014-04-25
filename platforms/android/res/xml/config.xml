@@ -52,7 +52,12 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
-    <name>PhoneGap</name>
+    <preference name="loadUrlTimeoutValue" value="180000" />
+    <feature name="jsHybugger">
+        <param name="android-package" value="org.jshybugger.cordova.JsHybuggerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>PG Debug</name>
     <description>
         The PhoneGap Developer app is a testing utility for web developers
         and designers using the PhoneGap framework. After installing the

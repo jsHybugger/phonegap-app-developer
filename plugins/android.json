@@ -21,7 +21,10 @@
                 "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>": 1,
                 "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>": 1,
                 "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /></feature>": 1,
-                "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>": 1
+                "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>": 1,
+                "<access origin=\"*\" />": 1,
+                "<preference name=\"loadUrlTimeoutValue\" value=\"180000\" />": 1,
+                "<feature name=\"jsHybugger\"><param name=\"android-package\" value=\"org.jshybugger.cordova.JsHybuggerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
@@ -39,7 +42,11 @@
                 "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />": 1
             },
             "/manifest": {
-                "<uses-permission android:name=\"android.permission.VIBRATE\" />": 1
+                "<uses-permission android:name=\"android.permission.VIBRATE\" />": 1,
+                "<uses-permission android:name=\"android.permission.INTERNET\" />": 1
+            },
+            "/manifest/application": {
+                "<provider android:authorities=\"com.adobe.phonegap.app.jsHybugger\" android:enabled=\"true\" android:exported=\"false\" android:name=\"org.jshybugger.DebugContentProvider\"><meta-data android:name=\"debugPort\" android:value=\"8888\" /><meta-data android:name=\"releaseBuildDebugging\" android:value=\"true\" /><meta-data android:name=\"excludeFiles\" android:value=\"*.min.js,*/cordova.js\" /><meta-data android:name=\"excludeHosts\" android:value=\"*.google*.com,*.twitter.com,*.gstatic.com\" /><meta-data android:name=\"mimeTypesHtml\" android:value=\".html\" /><meta-data android:name=\"mimeTypesJavascript\" android:value=\".js\" /><meta-data android:name=\"proxyEnabled\" android:value=\"true\" /><meta-data android:name=\"proxyPort\" android:value=\"8889\" /><meta-data android:name=\"upstreamProxyEnabled\" android:value=\"false\" /><meta-data android:name=\"upstreamProxyHost\" android:value=\"192.168.178.1\" /><meta-data android:name=\"upstreamProxyPort\" android:value=\"8080\" /></provider>": 1
             }
         }
     },
@@ -91,6 +98,9 @@
         },
         "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "com.phonegap.app"
+        },
+        "org.jshybugger.cordova": {
+            "PACKAGE_NAME": "com.adobe.phonegap.app"
         }
     },
     "dependent_plugins": {}

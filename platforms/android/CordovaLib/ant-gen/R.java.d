@@ -1,1 +1,1 @@
- : /Users/mwbrooks/Development/lib/phonegap-app/platforms/android/CordovaLib/ant-build/AndroidManifest.xml \
+ : C:\Projekte\phonegap-app-developer\platforms\android\CordovaLib\ant-build\AndroidManifest.xml \

@@ -7,6 +7,8 @@ using the PhoneGap framework. After installing the PhoneGap Developer app you
 can connect to your PhoneGap desktop app to instantly view and test your project
 on the device.
 
+To debug/inspect your application just open the following url in your chrome browser: chrome://inspect
+
 For more information, see [app.phonegap.com][3].
 
 ## Download

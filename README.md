@@ -1,6 +1,4 @@
-# PhoneGap Developer App
-
-> Available in an app store near you!
+# PhoneGap Developer App + jsHybugger
 
 ## Overview
 
@@ -9,21 +7,19 @@ using the PhoneGap framework. After installing the PhoneGap Developer app you
 can connect to your PhoneGap desktop app to instantly view and test your project
 on the device.
 
+To debug/inspect your application just open the following url in your chrome browser: chrome://inspect
+
 For more information, see [app.phonegap.com][3].
 
 ## Download
 
-- [Android Google Play][1]
-- [Apple AppStore][2]
+- http://www.jshybugger.com/examples/phonegap-app/PhoneGap-1.0.0_jsHybugger-4.5.1.apk
 
 ## Platform support
 
 - Android 4.1.0+
   - `cordova@3.4.0-0.1.3`
-- iOS 5.1.1+
-  - `phonegap@3.2.0-0.17.1`
-- Windows Phone 8.0+
-  - `cordova@3.4.0-0.1.3`
+
 
 ## Dependencies
 

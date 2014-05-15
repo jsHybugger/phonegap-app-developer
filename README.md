@@ -14,21 +14,22 @@ For more information, see [app.phonegap.com][3].
 ## Download
 
 - http://www.jshybugger.com/examples/phonegap-app/PhoneGap-1.0.0_jsHybugger-4.5.1.apk
-
-## Platform support
-
-- Android 4.1.0+
-  - `cordova@3.4.0-0.1.3`
-
-
-## Dependencies
-
-The PhoneGap Developer app is tightly coupled to the following libraries:
-
-- [connect-phonegap][4]
-- [phonegap-cli][5]
+- [Windows Phone store][7]
 
 ## Development
+
+### Compile and Run the Application
+
+
+    $ npm install -g phonegap@3.4.0-0.19.21
+    $ phonegap run ios
+    $ phonegap run android
+    $ phonegap run wp8
+
+For developers wishing to use the platform SDKs (Xcode, Eclipse, Visual Studio),
+please build once with the CLI to correctly populate the platform assets:
+
+    $ phonegap build <platform>
 
 ### Compiling LESS / CSS
 
@@ -36,6 +37,26 @@ When making changes to the CSS styling, remember to compile the LESS files:
 
     $ npm install
     $ npm run less
+
+### Running the Tests
+
+We use the mobile-spec test suite to ensure that each API is correctly installed.
+You can kick up the test suite with any of the following commands:
+
+    $ phonegap run android --test
+    $ phonegap run ios --test
+    $ phonegap run wp8 --test
+
+### Updating the Tests
+
+It's as easy as a copy and paste.
+
+1. Copy all content of `cordova-mobile-spec`
+2. Paste the content into `tests/`
+
+On your first run of the tests, you may see some modified files. This is expected
+because the test runner invoked by `--test` modifies certain files to support
+our app's configuration.
 
 ### Commits, Tags, and Releases
 
@@ -47,4 +68,5 @@ See the [CONTRIBUTING.md][6] file for details.
 [4]: http://github.com/phonegap/connect-phonegap
 [5]: http://github.com/phonegap/phonegap-cli
 [6]: https://github.com/phonegap/phonegap-app-developer/blob/master/CONTRIBUTING.md
+[7]: http://www.windowsphone.com/en-us/store/app/phonegap-developer/5c6a2d1e-4fad-4bf8-aaf7-71380cc84fe3
 

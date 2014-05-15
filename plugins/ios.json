@@ -196,6 +196,9 @@
         },
         "org.apache.cordova.media-capture": {
             "PACKAGE_NAME": "com.adobe.phonegap.app"
+        },
+        "org.jshybugger.cordova": {
+            "PACKAGE_NAME": "com.adobe.phonegap.app"
         }
     },
     "dependent_plugins": {}

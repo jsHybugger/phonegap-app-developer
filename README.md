@@ -13,8 +13,7 @@ For more information, see [app.phonegap.com][3].
 
 ## Download
 
-- http://www.jshybugger.com/examples/phonegap-app/PhoneGap-1.0.0_jsHybugger-4.5.1.apk
-- [Windows Phone store][7]
+- http://www.jshybugger.com/examples/phonegap-app/PhoneGap-1.0.0_jsHybugger-4.5.3.apk
 
 ## Development
 

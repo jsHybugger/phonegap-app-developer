@@ -20,7 +20,7 @@
 # org.apache.cordova.camera
 
 This plugin provides an API for taking pictures and for choosing images from
-the system's image libarary.
+the system's image library.
 
     cordova plugin add org.apache.cordova.camera
 
@@ -78,6 +78,7 @@ than `DATA_URL`.
 - Amazon Fire OS
 - Android
 - BlackBerry 10
+- Firefox OS
 - iOS
 - Tizen
 - Windows Phone 7 and 8
@@ -91,16 +92,13 @@ scenario, the image may not appear when the cordova activity is restored.
 
 ### Android Quirks
 
-*Android 4.4 only*: Android 4.4 introduced a new [Storage Access Framework](https://developer.android.com/guide/topics/providers/document-provider.html) that makes it 
-easier for users to browse and open documents across all of their preferred document storage providers.
-Cordova has not yet been fully integrated with this new Storage Access Framework. Because of this, the `getPicture()`
-method will not correctly return pictures when the user selects from the "Recent", "Drive", "Images", or "External
-Storage" folders when the `destinationType` is `FILE_URI`. However, the user will be able to correctly select any pictures
-if they go through the "Gallery" app first. Potential workarounds for this issue are documented on [this StackOverflow question](http://stackoverflow.com/questions/19834842/android-gallery-on-kitkat-returns-different-uri-for-intent-action-get-content/20177611). Please see [CB-5398](https://issues.apache.org/jira/browse/CB-5398) to track this issue. 
-
 Android uses intents to launch the camera activity on the device to capture
 images, and on phones with low memory, the Cordova activity may be killed.  In this
 scenario, the image may not appear when the Cordova activity is restored.
+
+### Firefox OS Quirks
+
+Camera plugin is currently implemented using [Web Activities](https://hacks.mozilla.org/2013/01/introducing-web-activities/). 
 
 ### iOS Quirks
 
@@ -208,7 +206,7 @@ Optional parameters to customize the camera settings.
             PICTURE: 0,    // allow selection of still pictures only. DEFAULT. Will return format specified via DestinationType
             VIDEO: 1,      // allow selection of video only, WILL ALWAYS RETURN FILE_URI
             ALLMEDIA : 2   // allow selection from all media types
-};
+        };
 
 - __correctOrientation__: Rotate the image to correct for the orientation of the device during capture. _(Boolean)_
 
@@ -253,6 +251,26 @@ Optional parameters to customize the camera settings.
 
 - Ignores the `cameraDirection` parameter.
 
+### Firefox OS Quirks
+
+- Ignores the `quality` parameter.
+
+- `Camera.DestinationType` is ignored and equals `1` (image file URI)
+
+- Ignores the `allowEdit` parameter.
+
+- Ignores the `PictureSourceType` parameter (user chooses it in a dialog window)
+
+- Ignores the `encodingType`
+
+- Ignores the `targetWidth` and `targetHeight`
+
+- `Camera.MediaType` is not supported.
+
+- Ignores the `correctOrientation` parameter.
+
+- Ignores the `cameraDirection` parameter.
+
 ### iOS Quirks
 
 - Set `quality` below 50 to avoid memory errors on some devices.
@@ -272,6 +290,11 @@ Optional parameters to customize the camera settings.
 - Ignores the `correctOrientation` parameter.
 
 - Ignores the `cameraDirection` parameter.
+
+- Ignores the `saveToPhotoAlbum` parameter.  IMPORTANT: All images taken with the wp7/8 cordova camera API are always copied to the phone's camera roll.  Depending on the user's settings, this could also mean the image is auto-uploaded to their OneDrive.  This could potentially mean the image is available to a wider audience than your app intended.  If this a blocker for your application, you will need to implement the CameraCaptureTask as documented on msdn : [http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh394006.aspx](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh394006.aspx)
+You may also comment or up-vote the related issue in the [issue tracker](https://issues.apache.org/jira/browse/CB-2083)
+
+- Ignores the `mediaType` property of `cameraOptions` as the Windows Phone SDK does not provide a way to choose videos from PHOTOLIBRARY.
 
 
 ## CameraError

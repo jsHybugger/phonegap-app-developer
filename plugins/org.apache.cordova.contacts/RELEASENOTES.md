@@ -68,3 +68,17 @@
 
 ### 0.2.7 (Jan 02, 2014)
 * B-5658 Add doc/index.md for Contacts plugin
+
+### 0.2.8 (Feb 05, 2014)
+* [CB-3208] FFOS docs updated
+* CB-4590 - chooseContact in CDVContacts crashes app
+
+### 0.2.9 (Feb 26, 2014)
+* CB-6086 Fix typo in ffos part of plugin.xml: Camera -> Contacts
+* CB-5994 Switch Contact ID lookup to use Raw contact id.
+
+### 0.2.10 (Apr 17, 2014)
+* CB-6126: [BlackBerry10] Update docs quirks section for fields which are supported
+* CB-6212: [iOS] fix warnings compiled under arm64 64-bit
+* CB-6460: Update license headers
+* Add NOTICE file

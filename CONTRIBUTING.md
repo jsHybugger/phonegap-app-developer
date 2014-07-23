@@ -45,5 +45,45 @@ Platform releases should individually tagged as:
 - 1.0.0-android-release
 - 1.0.0-ios-release
 
+## Releases
+
+### Update CHANGELOG
+
+Replace `1.0.0` with the previous version:
+
+    $ git log HEAD...1.0.0 --format="%s"
+
+Copy and paste the output to `CHANGELOG.md`
+
+## iOS Release Build
+
+- $ cordova build ios
+- Build and test the app on a device
+- Project -> Archive
+- Window -> Organizer -> Archive
+- Select the latest archive with the correct version
+- Select Distribute -> Ad Hoc -> Select AppStore Adobe Systems provisioning profile
+- Export to res/release/ios/PhoneGap-x.x.x-appstore.ipa
+
+## iOS Submission
+
+- itunesconnect.apple.com
+- Add a new PhoneGap Developer version
+  - Choose to not auto-release the app
+- Download Application Loader
+- Open Application Loader
+- Select Deliver Your App
+- Select PhoneGap with the correct version number
+- Select Choose
+- Select Send
+
+## Android Release Build
+
+- clone phonegap-app-developer-keys
+- cd phonegap-app-developer/
+- ln -s path/to/phonegap-app-developer-keys/keys/android resources/signing/android
+- $ cordova build android --release
+- cp platforms/android/ant-build/PhoneGap-release.apk resources/release/android/PhoneGap-x.x.x-release.apk
+
   [issue-url]: https://github.com/phonegap/phonegap-app-developer/issues
   [filter-url]: https://github.com/phonegap/phonegap-app-developer/issues?labels=discussion&page=1&state=open

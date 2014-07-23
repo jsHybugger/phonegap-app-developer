@@ -1,4 +1,4 @@
-# PhoneGap Developer App + jsHybugger
+# PhoneGap Developer App (1.1.0) + jsHybugger (4.5.6)
 
 ## Overview
 
@@ -13,7 +13,7 @@ For more information, see [app.phonegap.com][3].
 
 ## Download
 
-- http://www.jshybugger.com/examples/phonegap-app/PhoneGap-1.0.0_jsHybugger-4.5.3.apk
+- http://www.jshybugger.com/examples/phonegap-app/PhoneGap-1.1.0_jsHybugger-4.5.6.apk
 
 ## Development
 
@@ -21,7 +21,7 @@ For more information, see [app.phonegap.com][3].
 
 
     $ npm install
-    $ npm install -g phonegap@3.4.0-0.20.0
+    $ npm install -g phonegap
     $ phonegap run ios
     $ phonegap run android
     $ phonegap run wp8
